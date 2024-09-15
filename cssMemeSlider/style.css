@@ -13,16 +13,16 @@ body {
     font-family: Arial, sans-serif;
     font-weight: normal;
     background-color:  #1c252e;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     height: 100vh;
 }
 
 .slides_wrapper{
     display: flex;
     flex-direction: column;
-    margin: 2rem auto;
+    margin: 0 auto;
     justify-content: center;
-    width:56vw;
+    width:65vw;
     overflow: hidden;
 }
 
@@ -31,22 +31,21 @@ body {
 }
 
 .slides{
+    margin-top: 2rem;
     display: flex;
-    height: 73vh;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 75vh;
     overflow: hidden;
     margin-bottom: 2rem;
-    width: 56vw;
+    width: 65vw;
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-}
-
-.slide{
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
 }
 
 .img{
     border-radius: 2rem;
+    min-width: 65vw;
+    height: 75vh;
 }
 
 .descr_wrapper{
@@ -64,10 +63,16 @@ body {
 .text{
     color: #ffffff;
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
-.button_wrapper{
-    flex-shrink: 0;
+.descr_1,
+.descr_2,
+.descr_3,
+.descr_4 {
+    min-width: 40vw;
 }
 
 .buttons{
@@ -125,18 +130,18 @@ body {
     margin-left: -300%;
 }  
 
-#img_1:checked ~ .descr_wrapper .text_wrapper .text div{
+#img_1:checked ~ .descr_wrapper .text_wrapper .text{
     margin-left: 0;
 }
-  
-#img_2:checked ~ .descr_wrapper .text_wrapper .text div{
+
+#img_2:checked ~ .descr_wrapper .text_wrapper .text{
     margin-left: -100%;
 }
-  
-#img_3:checked ~ .descr_wrapper .text_wrapper .text div{
+
+#img_3:checked ~ .descr_wrapper .text_wrapper .text{
     margin-left: -200%;
 }
-  
-#img_4:checked ~ .descr_wrapper .text_wrapper .text div{
+
+#img_4:checked ~ .descr_wrapper .text_wrapper .text{
     margin-left: -300%;
-}  
+}
