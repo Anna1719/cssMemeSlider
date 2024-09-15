@@ -8,20 +8,22 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     font-weight: normal;
     background-color:  #1c252e;
     font-size: 1.8rem;
+    height: 100vh;
 }
 
 .slides_wrapper{
     display: flex;
     flex-direction: column;
-    margin: 0 20rem;
-    padding: 1rem;
+    margin: 2rem auto;
     justify-content: center;
-    max-width: 70%;
-    height: 100vh;
+    width:56vw;
+    overflow: hidden;
 }
 
 .radio {
@@ -29,38 +31,43 @@ body {
 }
 
 .slides{
-    width: 100%;
-    height: 48rem;
+    display: flex;
+    height: 73vh;
     overflow: hidden;
     margin-bottom: 2rem;
+    width: 56vw;
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 
 .slide{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
 }
 
 .img{
-    border-radius: 0.7em;
+    border-radius: 2rem;
+}
+
+.descr_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .text_wrapper{
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width:100%;
-    margin: 0 5.5rem;
+    width: 40vw;
+    overflow: hidden;
 }
 
 .text{
     color: #ffffff;
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
 }
 
 .button_wrapper{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-shrink: 0;
 }
 
 .buttons{
@@ -68,16 +75,68 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .label{
-
+    border: 0.5rem solid transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
 }
 
 .select_point{
-    background: #7fa8d0;
     border-radius: 50%;
-    width: 0.8em;
-    height: 0.8em;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #7fa8d0;
 }
+
+.label:hover div {
+    background: #ffffff;
+}
+
+.label:active div {
+    background:#1c252e;
+}
+
+#img_1:checked ~ .descr_wrapper .buttons_wrapper .buttons .label_1 div,
+#img_2:checked ~ .descr_wrapper .buttons_wrapper .buttons .label_2 div,
+#img_3:checked ~ .descr_wrapper .buttons_wrapper .buttons .label_3 div,
+#img_4:checked ~ .descr_wrapper .buttons_wrapper .buttons .label_4 div {
+    background:#1c252e;
+    border:0.3rem solid #7fa8d0;
+}
+
+#img_1:checked ~ .slides {
+    margin-left: 0;
+}
+  
+#img_2:checked ~ .slides {
+    margin-left: -100%;
+}
+  
+#img_3:checked ~ .slides {
+    margin-left: -200%;
+}
+  
+#img_4:checked ~ .slides {
+    margin-left: -300%;
+}  
+
+#img_1:checked ~ .descr_wrapper .text_wrapper .text div{
+    margin-left: 0;
+}
+  
+#img_2:checked ~ .descr_wrapper .text_wrapper .text div{
+    margin-left: -100%;
+}
+  
+#img_3:checked ~ .descr_wrapper .text_wrapper .text div{
+    margin-left: -200%;
+}
+  
+#img_4:checked ~ .descr_wrapper .text_wrapper .text div{
+    margin-left: -300%;
+}  
