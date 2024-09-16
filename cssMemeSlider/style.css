@@ -160,3 +160,11 @@ body {
         height: 45vh;
     }
 }
+
+.link{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    color: #d1e6f3;
+}
